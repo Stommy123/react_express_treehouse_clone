@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { SectionWrapper, List } from '../components';
+import { SectionWrapper, List, Search } from '../components';
 
 class Teachers extends Component {
-  state = { teachers: [] };
+  state = { teachers: [], filteredTeachers: [] };
   componentDidMount() {
     this.fetchTeachers();
   }
   fetchTeachers = async _ => {
     const { data: { teachers = [] } = {} } = await axios.get('/teachers');
-    this.setState({ teachers });
+    this.setState({ teachers, filteredTeachers: teachers });
   };
+  handleSearch = filteredTeachers => this.setState({ filteredTeachers });
   render() {
-    const { teachers } = this.state;
+    const { filteredTeachers, teachers } = this.state;
     return (
       <SectionWrapper>
         <h2>Teachers</h2>
-        <List items={teachers} type="teacher" className="group" />
+        <Search handleSearch={this.handleSearch} data={teachers} queryProp="name" />
+        <List items={filteredTeachers} type="teacher" className="group" />
       </SectionWrapper>
     );
   }

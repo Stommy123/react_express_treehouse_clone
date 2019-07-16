@@ -254,3 +254,7 @@ header {
     float: left;
   }
 }
+
+.search {
+  margin-bottom: 10px;
+}
