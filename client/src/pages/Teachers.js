@@ -9,16 +9,18 @@ class Teachers extends Component {
   }
   fetchTeachers = async _ => {
     const { data: { teachers = [] } = {} } = await axios.get('/teachers');
-    this.setState({ teachers, filteredTeachers: teachers });
+    const filteredTeachers = teachers.filter(teacher => teacher.img_src);
+    this.setState({ teachers: filteredTeachers, filteredTeachers });
   };
   handleSearch = filteredTeachers => this.setState({ filteredTeachers });
+  handleSelectTeacher = id => _ => this.props.history.push(`/teacher/${id}`);
   render() {
     const { filteredTeachers, teachers } = this.state;
     return (
       <SectionWrapper>
         <h2>Teachers</h2>
         <Search handleSearch={this.handleSearch} data={teachers} queryProp="name" />
-        <List items={filteredTeachers} type="teacher" className="group" />
+        <List items={filteredTeachers} type="teacher" className="group" handleItemClick={this.handleSelectTeacher} />
       </SectionWrapper>
     );
   }

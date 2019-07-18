@@ -16,6 +16,12 @@ app.get('/courses/:topic', (req, res) => {
 
 app.get('/teachers', (_, res) => res.send({ teachers: TeacherList }));
 
+app.get('/teacher/:id', (req, res) => {
+  const { id } = req.params;
+  const teacher = TeacherList.find(teacher => id === teacher.id);
+  res.send({ teacher });
+});
+
 app.get('/topics', (_, res) => res.send({ topics: Topics }));
 
 const PORT = process.env.PORT || 5000;

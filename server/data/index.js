@@ -7,6 +7,12 @@ const TeacherList = [
     id: 'teach-1'
   },
   {
+    name: 'Tommy Suwunrut',
+    bio:
+      '  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam deleniti harum accusantium assumenda non aliquid odit beatae architecto adipisci, asperiores voluptates animi dicta, ea velit consequatur possimus? Sed, recusandae nostrum.',
+    id: 'teach-7'
+  },
+  {
     name: 'NodeStradamus',
     bio:
       "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.",
@@ -21,6 +27,12 @@ const TeacherList = [
     id: 'teach-3'
   },
   {
+    name: 'Andy Weiss',
+    bio:
+      '  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam deleniti harum accusantium assumenda non aliquid odit beatae architecto adipisci, asperiores voluptates animi dicta, ea velit consequatur possimus? Sed, recusandae nostrum.',
+    id: 'teach-8'
+  },
+  {
     name: 'Ecma Scriptnstuff',
     bio:
       'Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript.',
@@ -28,11 +40,23 @@ const TeacherList = [
     id: 'teach-4'
   },
   {
+    name: 'Don Moorehouse',
+    bio:
+      '  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam deleniti harum accusantium assumenda non aliquid odit beatae architecto adipisci, asperiores voluptates animi dicta, ea velit consequatur possimus? Sed, recusandae nostrum.',
+    id: 'teach-9'
+  },
+  {
     name: 'Jay Query',
     bio:
       'Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher.',
     img_src: 'http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/jay.png',
     id: 'teach-5'
+  },
+  {
+    name: 'Bria Mitchell',
+    bio:
+      '  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam deleniti harum accusantium assumenda non aliquid odit beatae architecto adipisci, asperiores voluptates animi dicta, ea velit consequatur possimus? Sed, recusandae nostrum.',
+    id: 'teach-10'
   },
   {
     name: 'Json Babel',

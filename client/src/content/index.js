@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, Teachers, Courses, NotFound, Featured } from '../pages';
+import { Home, About, Teachers, SelectedTeacher, Courses, NotFound, Featured } from '../pages';
 import { Navigation } from '../components';
 
 const Content = _ => (
@@ -8,10 +8,11 @@ const Content = _ => (
     <Navigation />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
+      <Route exact path="/about" component={About} />
       <Route exact path="/teachers" component={Teachers} />
-      <Route path="/featured/:name/:topic" component={Featured} />
-      <Route path="/courses" component={Courses} />
+      <Route exact path="/teacher/:id" component={SelectedTeacher} />
+      <Route exact path="/featured/:name/:topic" component={Featured} />
+      <Route exact path="/courses" component={Courses} />
       <Route component={NotFound} />
     </Switch>
   </div>
