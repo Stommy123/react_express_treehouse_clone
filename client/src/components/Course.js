@@ -1,9 +1,17 @@
 import React from 'react';
 
-const Course = ({ id, img_src, title, description, handleItemClick, activeItems, allActive }) => {
+const Course = ({
+  id,
+  img_src,
+  title,
+  description,
+  handleItemClick,
+  activeItems: favoriteCourses,
+  allActive: allFavorites
+}) => {
   const course = { id, img_src, title, description };
-  const alreadyFavorited = activeItems.some(item => item.id === id);
-  const label = allActive || alreadyFavorited ? 'Remove from favorites' : 'Add to favorites';
+  const alreadyFavorited = favoriteCourses.some(item => item.id === id);
+  const label = allFavorites || alreadyFavorited ? 'Remove from favorites' : 'Add to favorites';
   return (
     <li className="course media group">
       <img className="course-img" src={img_src} alt="course" />
