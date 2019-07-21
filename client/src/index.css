@@ -258,3 +258,7 @@ header {
 .search {
   margin-bottom: 10px;
 }
+
+.course-favorites {
+  display: inline-flex;
+}

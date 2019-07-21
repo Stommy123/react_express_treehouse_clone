@@ -5,3 +5,4 @@ export { default as Home } from './Home';
 export { default as NotFound } from './NotFound';
 export { default as Teachers } from './Teachers';
 export { default as SelectedTeacher } from './SelectedTeacher';
+export { default as FavoriteCourses } from './FavoriteCourses';

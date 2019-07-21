@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Course, Teacher, Topic } from '.';
 
-const List = ({ items = [], type, className, handleItemClick, activeItem }) => {
+const List = ({ items = [], type, className, handleItemClick, activeItem, toggleStatus }) => {
   const Component = {
     course: Course,
     teacher: Teacher,
@@ -11,7 +11,13 @@ const List = ({ items = [], type, className, handleItemClick, activeItem }) => {
   return (
     <ul className={classNames(className)}>
       {items.map(item => (
-        <Component {...item} key={item.id} handleItemClick={handleItemClick} activeItem={activeItem} />
+        <Component
+          {...item}
+          key={item.id}
+          handleItemClick={handleItemClick}
+          activeItem={activeItem}
+          toggleStatus={toggleStatus}
+        />
       ))}
     </ul>
   );
