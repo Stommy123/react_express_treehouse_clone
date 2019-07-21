@@ -21,6 +21,9 @@ const Navigation = _ => (
       <li>
         <NavLink to="/courses">Courses</NavLink>
       </li>
+      <li>
+        <NavLink to="/favoriteCourses">Favorite Courses</NavLink>
+      </li>
     </ul>
   </header>
 );

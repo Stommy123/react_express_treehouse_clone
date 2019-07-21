@@ -22,6 +22,7 @@ class Courses extends Component {
   setTopic = topic => _ => this.setState({ activeTopic: topic.toLowerCase(), refetch: true });
   render() {
     const { courses, filteredCourses, activeTopic } = this.state;
+    const { updateFavoriteCourses, favoriteCourses } = this.props;
     return (
       <SectionWrapper className="courses">
         <div className="course-header group">
@@ -35,7 +36,12 @@ class Courses extends Component {
           />
         </div>
         <Search handleSearch={this.handleSearch} data={courses} queryProp="title" />
-        <List type="course" items={filteredCourses} />
+        <List
+          type="course"
+          items={filteredCourses}
+          handleItemClick={updateFavoriteCourses}
+          activeItems={favoriteCourses}
+        />
       </SectionWrapper>
     );
   }
