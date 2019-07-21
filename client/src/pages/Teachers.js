@@ -9,7 +9,7 @@ class Teachers extends Component {
   }
   fetchTeachers = async _ => {
     const { data: { teachers = [] } = {} } = await axios.get('/teachers');
-    const filteredTeachers = teachers.filter(teacher => teacher.img_src);
+    const filteredTeachers = teachers.filter(({ img_src }) => img_src);
     this.setState({ teachers: filteredTeachers, filteredTeachers });
   };
   handleSearch = filteredTeachers => this.setState({ filteredTeachers });

@@ -8,9 +8,9 @@ class Content extends Component {
 
   updateFavoriteCourses = selectedCourse => _ => {
     const { favoriteCourses } = this.state;
-    const alreadyFavorited = favoriteCourses.some(course => course.id === selectedCourse.id);
+    const alreadyFavorited = favoriteCourses.some(({ id }) => id === selectedCourse.id);
     const updatedFavorites = alreadyFavorited
-      ? favoriteCourses.filter(course => course.id === selectedCourse.id)
+      ? favoriteCourses.filter(({ id }) => id === selectedCourse.id)
       : [...favoriteCourses, selectedCourse];
     this.setState({ favoriteCourses: updatedFavorites });
   };
