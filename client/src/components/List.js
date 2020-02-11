@@ -8,6 +8,7 @@ const List = ({ items = [], type, className, handleItemClick, activeItem }) => {
     teacher: Teacher,
     topic: Topic
   }[type];
+
   return (
     <ul className={classNames(className)}>
       {items.map(item => (

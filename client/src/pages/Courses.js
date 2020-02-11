@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { SectionWrapper, List, Search } from '../components';
 
-const TOPICS = [{ id: '1', topic: 'HTML' }, { id: '2', topic: 'CSS' }, { id: '3', topic: 'JavaScript' }];
+const TOPICS = [
+  { id: '1', topic: 'HTML' },
+  { id: '2', topic: 'CSS' },
+  { id: '3', topic: 'JavaScript' }
+];
 
 class Courses extends Component {
   state = { activeTopic: 'html', courses: [], filteredCourses: [], refetch: true };
+
   componentDidMount() {
     const { activeTopic } = this.state;
     this.fetchCourses(activeTopic);
   }
+
   componentDidUpdate() {
     const { refetch, activeTopic } = this.state;
     refetch && this.fetchCourses(activeTopic);
   }
+
   fetchCourses = async topic => {
     const { data: { courses = [] } = {} } = await axios.get(`/courses/${topic}`);
     this.setState({ courses, filteredCourses: courses, refetch: false });
   };
+
   handleSearch = filteredCourses => this.setState({ filteredCourses });
+
   setTopic = topic => _ => this.setState({ activeTopic: topic.toLowerCase(), refetch: true });
+
   render() {
     const { courses, filteredCourses, activeTopic } = this.state;
     return (

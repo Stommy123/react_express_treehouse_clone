@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   state = { name: String(), topic: String() };
+
   handleInputChange = field => e => this.setState({ [field]: e.target.value });
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.setState({ name: String(), topic: String() });
   };
+
   render() {
     const { name, topic } = this.state;
     return (

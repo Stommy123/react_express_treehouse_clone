@@ -6,6 +6,7 @@ const Home = ({ history }) => {
     const path = `featured/${name}/${topic}`;
     history.push(path);
   };
+
   return (
     <SectionWrapper className="home">
       <h2>React Router Tutorial</h2>

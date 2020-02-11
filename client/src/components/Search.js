@@ -8,6 +8,7 @@ const Search = ({ handleSearch, data = [], queryProp }) => {
       : data;
     handleSearch(filteredData);
   };
+
   return (
     <div className="search">
       <input placeholder="Search..." type="text" onChange={handleInputChange} />

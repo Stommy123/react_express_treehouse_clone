@@ -4,6 +4,7 @@ import { SectionWrapper } from '../components';
 const Featured = ({ match }) => {
   const name = match.params.name;
   const topic = match.params.topic;
+
   return (
     <SectionWrapper>
       <h2>Featured:</h2>
