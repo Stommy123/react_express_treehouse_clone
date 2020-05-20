@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionWrapper } from '../components';
+import { SectionWrapper } from '../../components';
 
 const About = _ => (
   <SectionWrapper>

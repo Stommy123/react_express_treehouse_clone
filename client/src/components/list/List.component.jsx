@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Course, Teacher, Topic } from '.';
+import { Course, Teacher, Topic } from '..';
 
 const List = ({ items = [], type, className, handleItemClick, activeItem }) => {
   const Component = {
     course: Course,
     teacher: Teacher,
-    topic: Topic
+    topic: Topic,
   }[type];
 
   return (

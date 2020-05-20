@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { TeacherList, HTMLCourses, CSSCourses, JSCourses, Topics } = require('./data');
 
 const app = express();
@@ -9,7 +10,7 @@ app.get('/courses/:topic', (req, res) => {
     {
       html: HTMLCourses,
       css: CSSCourses,
-      javascript: JSCourses
+      javascript: JSCourses,
     }[topic] || [];
   res.send({ courses });
 });

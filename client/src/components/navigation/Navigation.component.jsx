@@ -3,23 +3,23 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = _ => (
   <header>
-    <span className="icn-logo">
-      <i className="material-icons">code</i>
+    <span className='icn-logo'>
+      <i className='material-icons'>code</i>
     </span>
-    <ul className="main-nav">
+    <ul className='main-nav'>
       <li>
-        <NavLink exact to="/">
+        <NavLink exact to='/'>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to='/about'>About</NavLink>
       </li>
       <li>
-        <NavLink to="/teachers">Teachers</NavLink>
+        <NavLink to='/teachers'>Teachers</NavLink>
       </li>
       <li>
-        <NavLink to="/courses">Courses</NavLink>
+        <NavLink to='/courses'>Courses</NavLink>
       </li>
     </ul>
   </header>

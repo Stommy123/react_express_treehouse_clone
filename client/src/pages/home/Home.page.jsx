@@ -1,15 +1,20 @@
-import React from 'react';
-import { SectionWrapper, Form } from '../components';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { AppContext } from '../../context';
+import { SectionWrapper, Form } from '../../components';
 
-const Home = ({ history }) => {
-  const setFeaturedContent = ({ name, topic }) => {
-    const path = `featured/${name}/${topic}`;
-    history.push(path);
+const Home = _ => {
+  const history = useHistory();
+  const { setFeaturedTeacher } = useContext(AppContext);
+
+  const setFeaturedContent = featuredTeacher => {
+    setFeaturedTeacher(featuredTeacher);
+    history.push('/featured');
   };
 
   return (
-    <SectionWrapper className="home">
-      <h2>React Router Tutorial</h2>
+    <SectionWrapper className='home'>
+      <h2>Multi Page React App Example</h2>
       <p>
         Learn front end web development and much more! This simple directory app offers a preview of our course library.
         Choose from many hours of content, from HTML to CSS to JavaScript. Learn to code and get the skills you need to
