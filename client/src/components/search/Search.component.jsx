@@ -1,14 +1,9 @@
 import React from 'react';
 
-const Search = ({ handleSearch, data = [], filterBy }) => {
+const Search = ({ handleSearch }) => {
   const handleInputChange = e => {
     const searchInput = e.target.value;
-
-    const filteredData = searchInput
-      ? data.filter(item => item[filterBy].toLowerCase().includes(searchInput.toLowerCase()))
-      : data;
-
-    handleSearch(filteredData);
+    handleSearch(searchInput);
   };
 
   return (

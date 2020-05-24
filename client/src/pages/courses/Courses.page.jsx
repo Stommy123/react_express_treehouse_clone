@@ -11,16 +11,15 @@ const TOPICS = [
 const Courses = _ => {
   const [activeTopic, setActiveTopic] = useState('html');
   const [courses, setCourses] = useState([]);
-  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
   const fetchCourses = async _ => {
     const { data } = await axios.get(`/courses/${activeTopic}`);
 
     setCourses(data.courses);
-    setFilteredCourses(data.courses);
   };
 
-  const handleSearch = updatedCourses => setFilteredCourses(updatedCourses);
+  const handleSearch = input => setSearchInput(input);
 
   const handleTopicChange = newTopic => _ => setActiveTopic(newTopic.toLowerCase());
 
@@ -29,6 +28,10 @@ const Courses = _ => {
       fetchCourses();
     },
     [activeTopic]
+  );
+
+  const filteredCourses = courses.filter(({ title }) =>
+    title.toLowerCase().includes(searchInput.toLowerCase())
   );
 
   return (
@@ -43,7 +46,7 @@ const Courses = _ => {
           activeItem={activeTopic}
         />
       </div>
-      <Search handleSearch={handleSearch} data={courses} filterBy='title' />
+      <Search handleSearch={handleSearch} />
       <List type='course' items={filteredCourses} />
     </SectionWrapper>
   );
